@@ -6,13 +6,11 @@ const { requestLogger, validarDispositivo } = require('./middlewares');
 
 app.use(express.json());
 app.use(requestLogger);
-//endpoint
-/////
+
 app.get('/dispositivos', (req, res) => {
   res.status(200).json(dispositivos);
 });
 
-/////
 app.post('/dispositivos', validarDispositivo, (req, res) => {
   const { nombre, ip, estado, tipo } = req.body;
 
@@ -32,7 +30,6 @@ app.post('/dispositivos', validarDispositivo, (req, res) => {
   res.status(201).json(nuevoDispositivo);
 });
 
-/////
 app.put('/dispositivos/:id', validarDispositivo, (req, res) => {
   const id = parseInt(req.params.id);
   const { nombre, ip, estado, tipo } = req.body;
@@ -50,8 +47,6 @@ app.put('/dispositivos/:id', validarDispositivo, (req, res) => {
 
   res.status(200).json(dispositivo);
 });
-
-/////
 app.delete('/dispositivos/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const index = dispositivos.findIndex(d => d.id === id);

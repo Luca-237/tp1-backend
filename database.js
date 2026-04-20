@@ -1,10 +1,10 @@
 const dispositivos = [
   {
     id: 1,
-    nombre: "PC-Oficina",
+    nombre: "Pc",
     ip: "192.168.0.10",
     estado: "activo",
-    tipo: "pc"
+    tipo: "computadora"
   }
 ];
 
